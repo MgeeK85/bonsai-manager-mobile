@@ -1,10 +1,10 @@
 {
-  "name": "HelloIonic",
+  "name": "bonsai-manager",
   "private": "false",
   "dependencies": {
     "angular-resource": "1.4.3",
     "moment": "2.10.6",
-    "directives": "https://github.com/MgeeK85/bonsai-manager/blob/master/client/dist/all.js",
-    "templates": "https://github.com/MgeeK85/bonsai-manager/blob/master/client/dist/templates.js"
+    "directives": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/all.js",
+    "templates": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/templates.js"
   }
 }

@@ -1,10 +1,13 @@
 {
   "name": "templates",
   "_cacheHeaders": {
-    "Content-Type": "text/html; charset=utf-8"
+    "ETag": "\"0b1bb1ee871400dc3c194a7a4d5ed907a896631f\"",
+    "Content-Length": "344",
+    "Content-Type": "text/plain; charset=utf-8"
   },
+  "_release": "e-tag:0b1bb1ee8",
   "main": "index.js",
-  "_source": "https://github.com/MgeeK85/bonsai-manager/blob/master/client/dist/templates.js",
+  "_source": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/templates.js",
   "_target": "*",
-  "_originalSource": "https://github.com/MgeeK85/bonsai-manager/blob/master/client/dist/templates.js"
+  "_originalSource": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/templates.js"
 }
