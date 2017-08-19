@@ -1,0 +1,12 @@
+{
+  "name": "directives",
+  "_cacheHeaders": {
+    "Content-Language": "en-US",
+    "Content-Length": "592",
+    "Content-Type": "text/html; charset=ISO-8859-1"
+  },
+  "main": "index.js",
+  "_source": "https://git.ng.bluemix.net/mattia.casella/bonsai-manager/tree/master/client/dist/all.js",
+  "_target": "*",
+  "_originalSource": "https://git.ng.bluemix.net/mattia.casella/bonsai-manager/tree/master/client/dist/all.js"
+}
