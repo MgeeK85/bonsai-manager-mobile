@@ -5,6 +5,9 @@
     "angular-resource": "1.4.3",
     "moment": "2.10.6",
     "directives": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/all.js",
-    "templates": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/templates.js"
+    "templates": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/templates.js",
+    "font-awesome": "fontawesome#^4.7.0",
+    "ng-dialog": "~0.6.0",
+    "angular-nvd3": "^1.0.9"
   }
 }
