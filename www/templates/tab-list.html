@@ -1,32 +1,26 @@
 <ion-view view-title="List">
-  <ion-content class="padding">
+    <ion-content class="padding">
 
-    <table class="rwd-table">
-      <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Species</th>
-        <th>Style</th>
-        <th>Age</th>
-        <th>Height</th>
-        <th>Diameter</th>
-        <th>Pot</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr ui-sref="app.bonsaidetail({id: bonsai.id})" ng-repeat="bonsai in list.bonsais track by $index">
-        <th>{{$index+1}}</th>
-        <td>{{bonsai.name}}</td>
-        <td>{{bonsai.species}}</td>
-        <td>{{bonsai.style}}</td>
-        <td>{{bonsai.age}}</td>
-        <td>{{bonsai.height}}</td>
-        <td>{{bonsai.diameter}}</td>
-        <td>{{bonsai.pot}}</td>
-      </tr>
-      </tbody>
-    </table>
+        <table class="rwd-table">
+            <tr>
+                <th>Name</th>
+                <th>Species</th>
+                <th>Style</th>
+                <th>Age</th>
+                <th>Height</th>
+                <th>Diameter</th>
+                <th>Pot</th>
+            </tr>
+            <tr ui-sref="detail({id: bonsai.id})" ng-repeat="bonsai in list.bonsais">
+                <td data-th="Name">{{bonsai.name}}</td>
+                <td data-th="Species">{{bonsai.species}}</td>
+                <td data-th="Style">{{bonsai.style}}</td>
+                <td data-th="Age">{{bonsai.age}}</td>
+                <td data-th="Height">{{bonsai.height}}</td>
+                <td data-th="Diameter">{{bonsai.diameter}}</td>
+                <td data-th="Pot">{{bonsai.pot}}</td>
+            </tr>
+        </table>
 
-  </ion-content>
+    </ion-content>
 </ion-view>

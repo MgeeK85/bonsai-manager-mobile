@@ -1,7 +1,6 @@
 angular.module('starter', [
     'ionic',
     'starter.controllers',
-    'starter.services',
     'ngDialog',
     'lbServices',
     'nvd3'
@@ -39,6 +38,7 @@ angular.module('starter', [
       // Get data from localstorage after pagerefresh
       // and load user data into rootscope.
       if (LoopBackAuth.accessTokenId && !$rootScope.currentUser) {
+          console.log("page refresh");
           AuthService.refresh(LoopBackAuth.accessTokenId);
       }
 
@@ -54,8 +54,8 @@ angular.module('starter', [
                 // Transform **all** $http calls so that requests that go to `/`
                 // instead go to a different origin, in this case localhost:3000
                 if (req.url.charAt(0) === '/') {
-                    //req.url = 'http://localhost:3000' + req.url;
-                    req.url = 'https://bonsai-manager.mybluemix.net' + req.url;
+                    req.url = 'http://localhost:3000' + req.url;
+                    //req.url = 'https://bonsai-manager.mybluemix.net' + req.url;
 
                     console.log("interceptor req url: ", req.url);
 
@@ -97,10 +97,22 @@ angular.module('starter', [
     views: {
       'tab-list': {
         templateUrl: 'templates/tab-list.html',
-        controller: 'ListCtrl'
+        controller: 'ListCtrl as list'
       }
+
     }
   })
+
+      .state('tab.detail', {
+          url: '/detail/:id',
+          parent: 'tab.list',
+          views: {
+              'detail@': {
+                  templateUrl: 'templates/bonsai-detail.html',
+                  controller: 'BonsaiDetailCtrl'
+              }
+          }
+      })
 
   .state('tab.newedit', {
       url: '/newedit',
@@ -111,6 +123,8 @@ angular.module('starter', [
           }
       }
   })
+
+
 
   ;
 

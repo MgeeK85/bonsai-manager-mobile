@@ -1,13 +1,50 @@
 <ion-view view-title="Home">
-  <ion-content class="padding">
+    <ion-content class="padding">
+
+        <!-- NOT LOGGED -->
+        <div ng-show="!home.loggedIn" class="text-center">
+
+            <br/>
+
+            <h1>Welcome to Bonsai Manager</h1>
+
+            <br/><br/><br/>
+
+            <h3>This application allows to keep all information about your Bonsai collection.</h3>
+
+            <br/><br/>
+            <p>Click "Login" to enter</p>
+        </div>
+
+        <!-- LOGGED -->
+        <div ng-show="home.loggedIn">
 
 
-    <div ng-show="">
+            <div class="list card" ng-repeat="bonsai in home.bonsais">
 
-    </div>
-    <h2>Welcome to Ionic</h2>
+                <div class="item item-avatar">
+                    <img src="img/bonsai.jpg">
+                    <h2>{{bonsai.name}}</h2>
+                    <p>{{bonsai.species}}</p>
+                </div>
+
+                <div class="item item-body">
+                    <img class="full-image" src="img/bonsai.jpg">
+                    <p>
+                        <span>Age: {{bonsai.age}}</span>
+                        <span>Height: {{bonsai.height}}</span>
+                        <span>Diameter: {{bonsai.diameter}}</span>
+                    </p>
+                    <p>
+                        Note: {{bonsai.note}}
+                    </p>
+                </div>
+
+            </div>
 
 
+        </div>
 
-  </ion-content>
+
+    </ion-content>
 </ion-view>
