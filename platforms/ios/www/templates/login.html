@@ -1,0 +1,37 @@
+<ion-view view-title="Login">
+
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Do Login</h1>
+    <button class="button button-clear button-primary" ng-click="tabs.modal.hide()">Cancel</button>
+  </ion-header-bar>
+
+
+  <ion-content class="padding">
+
+    <form ng-submit="tabs.doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input id="username" ng-model="tabs.loginData.username" type="text" placeholder="Username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input id="password" placeholder="Password" ng-model="tabs.loginData.password" type="text">
+        </label>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="tabs.rememberMe"> Remember me
+          </label>
+        </div>
+
+
+
+        <button type="button" class="button button-full" ng-click="closeThisDialog('Cancel')">Cancel</button>
+        <button type="button" class="button button-full" ng-click="tabs.openRegister()">Click here to register</button>
+        <button type="submit" class="button button-full button-positive">Sign in</button>
+      </div>
+    </form>
+
+  </ion-content>
+</ion-view>

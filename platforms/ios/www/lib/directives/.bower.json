@@ -1,0 +1,13 @@
+{
+  "name": "directives",
+  "_cacheHeaders": {
+    "ETag": "\"6cb540e48eb75c55df063bf016727f111affa2fe\"",
+    "Content-Length": "12557",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:6cb540e48",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/all.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/MgeeK85/bonsai-manager/master/client/dist/all.js"
+}

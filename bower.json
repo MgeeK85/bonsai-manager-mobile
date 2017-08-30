@@ -6,6 +6,7 @@
     "moment": "2.10.6",
     "font-awesome": "fontawesome#^4.7.0",
     "ng-dialog": "~0.6.0",
-    "angular-nvd3": "^1.0.9"
+    "angular-nvd3": "^1.0.9",
+    "jquery": "1.9.1"
   }
 }

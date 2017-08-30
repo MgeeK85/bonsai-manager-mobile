@@ -1,0 +1,26 @@
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+  <!-- Home Tab -->
+  <ion-tab title="Home" icon-off="fa fa-home" icon-on="fa fa-home" href="#/tab/home">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+  <!-- List Tab -->
+  <ion-tab ng-if="tabs.loggedIn" title="List" icon-off="fa fa-list" icon-on="fa fa-list" href="#/tab/list">
+    <ion-nav-view name="tab-list"></ion-nav-view>
+  </ion-tab>
+
+  <!-- New-Edit Tab -->
+  <ion-tab ng-if="tabs.loggedIn" title="New" icon-off="fa fa-plus" icon-on="fa fa-plus" href="#/tab/newedit">
+    <ion-nav-view name="tab-newedit"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Logout -->
+  <ion-tab ng-if="tabs.loggedIn" title="Logout" icon-off="fa fa-sign-out" ng-click="tabs.doLogout()">
+  </ion-tab>
+
+  <!-- Login -->
+  <ion-tab ng-if="!tabs.loggedIn" title="Login" icon-off="fa fa-sign-in" ng-click="tabs.openMyModal()">
+  </ion-tab>
+
+</ion-tabs>

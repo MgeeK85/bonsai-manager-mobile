@@ -31,7 +31,7 @@ angular.module('starter', [
                   state: toState,
                   params: toParams
               };
-              $state.go('app');
+              $state.go('tabs.home');
           }
       });
 

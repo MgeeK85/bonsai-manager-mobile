@@ -1,0 +1,47 @@
+<ion-view view-title="Login">
+
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">Register</h1>
+        <button class="button button-clear button-primary" ng-click="tabs.modal.hide()">Cancel</button>
+    </ion-header-bar>
+
+
+    <ion-content class="padding">
+
+        <form ng-submit="tabs.doRegister()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input id="username" ng-model="tabs.registration.username" type="text" placeholder="Username">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input id="password" placeholder="Password" ng-model="tabs.registration.password" type="text">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input id="email" placeholder="email" ng-model="tabs.registration.email" type="text">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input id="firstname" placeholder="firstname" ng-model="tabs.registration.firstname" type="text">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input id="lastname" placeholder="lastname" ng-model="tabs.registration.lastname" type="text">
+                </label>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="tabs.registration.rememberMe"> Remember me
+                    </label>
+                </div>
+
+                <button type="button" class="button button-full" ng-click="closeThisDialog('Cancel')">Cancel</button>
+                <button type="submit" class="button button-full button-positive">Register</button>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>
