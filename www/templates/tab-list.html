@@ -1,5 +1,7 @@
-<ion-view view-title="List">
+<ion-view view-title="List" cache-view="false">
     <ion-content class="padding">
+
+        <ion-refresher on-refresh="list.doRefresh()"></ion-refresher>
 
         <table class="rwd-table">
             <tr>
@@ -10,8 +12,9 @@
                 <th>Height</th>
                 <th>Diameter</th>
                 <th>Pot</th>
+                <th>Note</th>
             </tr>
-            <tr ui-sref="detail({id: bonsai.id})" ng-repeat="bonsai in list.bonsais">
+            <tr ui-sref="tab.detail({id: bonsai.id})" ng-repeat="bonsai in list.bonsais">
                 <td data-th="Name">{{bonsai.name}}</td>
                 <td data-th="Species">{{bonsai.species}}</td>
                 <td data-th="Style">{{bonsai.style}}</td>
@@ -19,8 +22,12 @@
                 <td data-th="Height">{{bonsai.height}}</td>
                 <td data-th="Diameter">{{bonsai.diameter}}</td>
                 <td data-th="Pot">{{bonsai.pot}}</td>
+                <td data-th="Note">{{bonsai.note}}</td>
             </tr>
         </table>
 
     </ion-content>
 </ion-view>
+
+
+

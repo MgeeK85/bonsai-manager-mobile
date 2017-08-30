@@ -2,18 +2,49 @@
   <ion-content class="padding">
 
     <div class="list">
+      <!-- NAME -->
       <label class="item item-input item-stacked-label">
-        <span class="input-label">First Name</span>
-        <input type="text" placeholder="John">
+        <span class="input-label">Name</span>
+        <input type="text" ng-model="newedit.bonsai.name" placeholder="Insert name...">
       </label>
+      <!-- SPECIES -->
       <label class="item item-input item-stacked-label">
-        <span class="input-label">Last Name</span>
-        <input type="text" placeholder="Suhr">
+        <span class="input-label">Species</span>
+        <input type="text" ng-model="newedit.bonsai.species" placeholder="Insert species...">
       </label>
+      <!-- STYLE -->
       <label class="item item-input item-stacked-label">
-        <span class="input-label">Email</span>
-        <input type="text" placeholder="john@suhr.com">
+        <span class="input-label">Style</span>
+        <input type="text" ng-model="newedit.bonsai.style" placeholder="Insert style...">
       </label>
+      <!-- AGE -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Age</span>
+        <input type="text" ng-model="newedit.bonsai.age" placeholder="Insert age...">
+      </label>
+      <!-- HEIGHT -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Height</span>
+        <input type="text" ng-model="newedit.bonsai.height" placeholder="Insert height...">
+      </label>
+      <!-- DIAMETER -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Diameter</span>
+        <input type="text" ng-model="newedit.bonsai.diameter" placeholder="Insert diameter...">
+      </label>
+      <!-- POT -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Pot</span>
+        <input type="text" ng-model="newedit.bonsai.pot" placeholder="Insert pot type...">
+      </label>
+      <!-- NOTE -->
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Note</span>
+        <textarea ng-model="newedit.bonsai.note" placeholder="Insert note..."></textarea>
+      </label>
+
+      <button class="button button-block button-balanced" ng-click="newedit.createUpdateBonsai()">Save</button>
+      <button class="button button-block button-assertive" ng-click="newedit.cancel()">Cancel</button>
     </div>
   </ion-content>
 </ion-view>

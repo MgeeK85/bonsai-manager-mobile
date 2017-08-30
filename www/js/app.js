@@ -99,27 +99,25 @@ angular.module('starter', [
         templateUrl: 'templates/tab-list.html',
         controller: 'ListCtrl as list'
       }
-
     }
   })
-
-      .state('tab.detail', {
-          url: '/detail/:id',
-          parent: 'tab.list',
-          views: {
-              'detail@': {
-                  templateUrl: 'templates/bonsai-detail.html',
-                  controller: 'BonsaiDetailCtrl'
-              }
-          }
-      })
 
   .state('tab.newedit', {
       url: '/newedit',
       views: {
           'tab-newedit': {
               templateUrl: 'templates/tab-newedit.html',
-              controller: 'NewEditCtrl'
+              controller: 'NewEditCtrl as newedit'
+          }
+      }
+  })
+
+  .state('tab.detail', {
+      url: '/detail/:id',
+      views: {
+          'tab-detail': {
+              templateUrl: 'templates/bonsai-detail.html',
+              controller: 'BonsaiDetailCtrl as detail'
           }
       }
   })
