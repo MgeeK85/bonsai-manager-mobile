@@ -1,8 +1,8 @@
 <ion-view view-title="Login">
 
-    <ion-header-bar class="bar bar-header bar-positive">
+    <ion-header-bar class="bar bar-header bar-balanced">
         <h1 class="title">Register</h1>
-        <button class="button button-clear button-primary" ng-click="tabs.modal.hide()">Cancel</button>
+        <button class="button button-clear button-primary" ng-click="tabs.modalRegister.hide()">Cancel</button>
     </ion-header-bar>
 
 
@@ -20,28 +20,27 @@
                 </label>
 
                 <label class="item item-input">
-                    <span class="input-label">Password</span>
+                    <span class="input-label">E-mail</span>
                     <input id="email" placeholder="email" ng-model="tabs.registration.email" type="text">
                 </label>
                 <label class="item item-input">
-                    <span class="input-label">Password</span>
+                    <span class="input-label">Firstname</span>
                     <input id="firstname" placeholder="firstname" ng-model="tabs.registration.firstname" type="text">
                 </label>
                 <label class="item item-input">
-                    <span class="input-label">Password</span>
+                    <span class="input-label">Lastname</span>
                     <input id="lastname" placeholder="lastname" ng-model="tabs.registration.lastname" type="text">
                 </label>
 
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" ng-model="tabs.registration.rememberMe"> Remember me
-                    </label>
-                </div>
+                <ion-checkbox ng-model="tabs.registration.rememberMe">Remember me</ion-checkbox>
 
-                <button type="button" class="button button-full" ng-click="closeThisDialog('Cancel')">Cancel</button>
-                <button type="submit" class="button button-full button-positive">Register</button>
+                <button type="submit" class="button button-full button-balanced">Register</button>
+                <button type="button" class="button button-full button-assertive" ng-click="tabs.cancelRegister()">Cancel</button>
             </div>
         </form>
 
     </ion-content>
 </ion-view>
+
+
+

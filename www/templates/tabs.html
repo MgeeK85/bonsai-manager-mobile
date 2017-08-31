@@ -8,8 +8,6 @@
   <!-- List Tab -->
   <ion-tab ng-if="tabs.loggedIn" title="List" icon-off="fa fa-list" icon-on="fa fa-list" href="#/tab/list">
     <ion-nav-view name="tab-list"></ion-nav-view>
-
-    <ion-nav-view name="tab-detail"></ion-nav-view>
   </ion-tab>
 
   <!-- New-Edit Tab -->
@@ -22,7 +20,7 @@
   </ion-tab>
 
   <!-- Login -->
-  <ion-tab ng-if="!tabs.loggedIn" title="Login" icon-off="fa fa-sign-in" ng-click="tabs.openMyModal()">
+  <ion-tab ng-if="!tabs.loggedIn" title="Login" icon-off="fa fa-sign-in" ng-click="tabs.openLoginModal()">
   </ion-tab>
 
 </ion-tabs>

@@ -5,11 +5,14 @@ angular.module('starter.controllers', [])
 
     var vm = this;
 
-    vm.openMyModal = openMyModal;
+    vm.openLoginModal = openLoginModal;
+    vm.openRegisterModal = openRegisterModal;
     vm.closeModal = closeModal;
     vm.doLogin = doLogin;
+    vm.cancelLogin = cancelLogin;
     vm.doLogout = doLogout;
-    vm.openRegister = openRegister;
+    vm.doRegister = doRegister;
+    vm.cancelRegister = cancelRegister;
 
     $rootScope.$on('login:Successful', function () {
         vm.loggedIn = AuthService.isAuthenticated();
@@ -32,11 +35,21 @@ angular.module('starter.controllers', [])
     });
 
 
+    // Login
     $ionicModal.fromTemplateUrl('../templates/login.html', {
         scope: $scope,
         animation: 'slide-in-up'
     }).then(function(modal) {
         vm.modal = modal;
+    });
+
+
+    //Register
+    $ionicModal.fromTemplateUrl('../templates/register.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        vm.modalRegister = modal;
     });
 
 
@@ -52,9 +65,10 @@ angular.module('starter.controllers', [])
 
         vm.loggedIn = false;
         vm.modal = null;
+        vm.modalRegister = null;
     }
 
-    function openMyModal() {
+    function openLoginModal() {
         vm.modal.show();
 
         console.log("rememberMe", vm.rememberMe);
@@ -76,10 +90,22 @@ angular.module('starter.controllers', [])
         if(vm.rememberMe)
             $localStorage.storeObject('userinfo',vm.loginData);
 
+        console.log("login", vm.loginData);
+
         AuthService.login(vm.loginData);
 
         vm.modal.hide();
 
+    }
+
+    function cancelLogin() {
+        vm.loginData = {};
+        vm.modal.hide();
+    }
+
+    function cancelRegister() {
+        vm.registration = {};
+        vm.modalRegister.hide();
     }
 
     function doLogout() {
@@ -93,7 +119,7 @@ angular.module('starter.controllers', [])
             if(res) {
                 AuthService.logout()
                     .then(function() {
-                        $state.go('tab.home');
+                        $state.go('tab.home', {}, {reload: true});
                     });
             } else {
 
@@ -103,17 +129,30 @@ angular.module('starter.controllers', [])
 
     }
 
-    function openRegister() {
+    function openRegisterModal() {
+
+        vm.modalRegister.show();
 
         console.log("register");
-        ngDialog.open(
-            {
-                template: 'views/register.html',
-                scope: $scope,
-                className: 'ngdialog-theme-default',
-                controller:"RegisterCtrl"
-            }
-        );
+    }
+
+    function doRegister() {
+        console.log("register", vm.registration);
+
+        if(vm.rememberMe) {
+            vm.loginData = $localStorage.getObject('userinfo', '{}');
+        }
+
+        AuthService.register(vm.registration);
+
+
+        vm.loginData = {
+            username: vm.registration.username,
+            password: vm.registration.password
+        };
+
+        vm.modalRegister.hide();
+
     }
 
 
@@ -301,8 +340,10 @@ angular.module('starter.controllers', [])
             */
 
 
+            console.log("id:", $stateParams.id);
 
             if($stateParams.id) {
+
 
                 Bonsai.findById({id: $stateParams.id})
                     .$promise.then(
@@ -335,7 +376,7 @@ angular.module('starter.controllers', [])
                 function(data) {
 
                     $log.info("bonsai saved", data);
-                    $state.go('app.list');
+                    $state.go('tab.list');
                 }
             );
         } else {

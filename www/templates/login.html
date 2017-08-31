@@ -21,9 +21,9 @@
 
         <ion-checkbox ng-model="tabs.loginData.rememberMe">Remember me</ion-checkbox>
 
-        <button type="button" class="button button-full" ng-click="closeThisDialog('Cancel')">Cancel</button>
-        <button type="button" class="button button-full" ng-click="tabs.openRegister()">Click here to register</button>
         <button type="submit" class="button button-full button-balanced">Sign in</button>
+        <button type="button" class="button button-full button-positive" ng-click="tabs.openRegisterModal()">Click here to register</button>
+        <button type="button" class="button button-full button-assertive" ng-click="tabs.cancelLogin()">Cancel</button>
       </div>
     </form>
 

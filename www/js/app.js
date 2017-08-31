@@ -54,8 +54,8 @@ angular.module('starter', [
                 // Transform **all** $http calls so that requests that go to `/`
                 // instead go to a different origin, in this case localhost:3000
                 if (req.url.charAt(0) === '/') {
-                    req.url = 'http://localhost:3000' + req.url;
-                    //req.url = 'https://bonsai-manager.mybluemix.net' + req.url;
+                    //req.url = 'http://localhost:3000' + req.url;
+                    req.url = 'https://bonsai-manager.mybluemix.net' + req.url;
 
                     console.log("interceptor req url: ", req.url);
 
@@ -84,6 +84,7 @@ angular.module('starter', [
   // Each tab has its own nav history stack:
   .state('tab.home', {
     url: '/home',
+      cache: false,
     views: {
       'tab-home': {
         templateUrl: 'templates/tab-home.html',
@@ -102,8 +103,18 @@ angular.module('starter', [
     }
   })
 
+  .state('tab.detail', {
+    url: '/:id',
+    views:{
+        'tab-list':{
+            templateUrl: 'templates/bonsai-detail.html',
+            controller: 'BonsaiDetailCtrl as detail'
+        }
+    }
+  })
+
   .state('tab.newedit', {
-      url: '/newedit',
+      url: '/newedit/:id',
       views: {
           'tab-newedit': {
               templateUrl: 'templates/tab-newedit.html',
@@ -111,17 +122,6 @@ angular.module('starter', [
           }
       }
   })
-
-  .state('tab.detail', {
-      url: '/detail/:id',
-      views: {
-          'tab-detail': {
-              templateUrl: 'templates/bonsai-detail.html',
-              controller: 'BonsaiDetailCtrl as detail'
-          }
-      }
-  })
-
 
 
   ;

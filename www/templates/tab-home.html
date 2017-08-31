@@ -20,7 +20,7 @@
         <div ng-show="home.loggedIn">
 
 
-            <div class="list card" ng-repeat="bonsai in home.bonsais">
+            <div ng-show="home.bonsais && home.bonsais.length > 0" class="list card bonsai-home-card" ng-repeat="bonsai in home.bonsais">
 
                 <div class="item item-avatar">
                     <img src="img/bonsai.jpg">
@@ -40,6 +40,10 @@
                     </p>
                 </div>
 
+            </div>
+
+            <div ng-show="!home.bonsais || home.bonsais.length == 0">
+                No results.
             </div>
 
 
